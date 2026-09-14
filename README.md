@@ -63,13 +63,13 @@ present).
 
 ## Training Pipeline
 
-**Embedding extraction** (`src/extract_embeddings.py`): `google/gemma-2-2b`
+**Embedding extraction** (`scripts/extract_embeddings.py`): `google/gemma-2-2b`
 (fp16); layer 14 via a forward hook on `model.model.layers[13]` (see
 `docs/debugging_notes.md` for the off-by-one this avoids); mean pooling over
 real tokens only (attention-mask-weighted); 64-token truncation, matching the
 competition's extraction recipe.
 
-**Classifier** (`src/train_probe.py`): Logistic Regression,
+**Classifier** (`scripts/train_probe.py`): Logistic Regression,
 `class_weight='balanced'`, `C=0.1`; features standardized before fitting;
 saved as a single `sklearn.pipeline.Pipeline` (scaler + classifier).
 
@@ -94,10 +94,10 @@ and hidden-test accuracy converged to a consistent, trustworthy signal.
 
 1. `pip install -r requirements.txt`
 2. Set up Hugging Face access (`huggingface-cli login` or `HF_TOKEN` env var)
-3. Run `src/extract_embeddings.py` — downloads the 4 sources, cleans/dedupes/
+3. Run `scripts/extract_embeddings.py` — downloads the 4 sources, cleans/dedupes/
    labels each, extracts layer-14 embeddings, saves to disk
-4. Run `src/train_probe.py` — trains and saves `trained_probe.joblib`
-5. `src/classifier.py` is the Codabench-compatible submission interface; zip
+4. Run `scripts/train_probe.py` — trains and saves `trained_probe.joblib`
+5. `scripts/classifier.py` is the Codabench-compatible submission interface; zip
    it with `trained_probe.joblib` at the root of the archive
 
 ---
