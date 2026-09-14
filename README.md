@@ -3,8 +3,7 @@
 **Team OKU** — TRI AI Saturdays Lagos, Cohort 10
 Team leader: Thaabit Idris · Members: Ogwu Naomi Chukwufumnanya, Riyas Yusuf
 
-Codabench competition: [Latent Probe Challenge - Toxicity Detection](https://www.codabench.org/competitions/17670/)
-**Result: 0.76 accuracy, 2nd place, Testing Phase (unseen hidden test set)**
+Codabench competition: [Latent Probe Challenge - Toxicity Detection]
 
 ---
 
@@ -119,7 +118,7 @@ non-English input. Full detail and reasoning are in `docs/data_card.pdf` and
 
 **Contributors:** Thaabit Idris (team leader), Ogwu Naomi Chukwufumnanya,
 Riyas Yusuf
-**Mentors:** _[fill in mentor name(s)]_
+**Mentors:** _Adnan HADDY_
 
 Full write-ups of the five bugs found and fixed during development (wrong
 text column, wrong label column, off-by-one layer bug, truncation-length
